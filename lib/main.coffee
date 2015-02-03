@@ -1,8 +1,6 @@
 validator = require "./validator"
 
 module.exports = HtmlValidation =
-    subscriptions: null
-
     config:
         validateOnSave:
             type: "boolean"
