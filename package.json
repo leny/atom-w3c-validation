@@ -1,8 +1,8 @@
 {
   "name": "html-validation",
-  "main": "./lib/html-validation",
+  "main": "./lib/main",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Validate your html file using W3C validator.",
   "activationCommands": {
     "atom-text-editor": "html-validation:validate"
   },
@@ -11,6 +11,9 @@
   "engines": {
     "atom": ">0.170.0"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "atom-message-panel": "^1.1.4",
+    "w3cvalidator": "^0.1.26"
   }
 }
