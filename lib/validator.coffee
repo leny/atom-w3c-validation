@@ -13,6 +13,8 @@ module.exports = ->
     oMessagesPanel.clear()
     oMessagesPanel.attach()
 
+    oMessagesPanel.toggle() if atom.config.get( "html-validation.useFoldModeAsDefault" ) and oMessagesPanel.summary.css( "display" ) is "none"
+
     oMessagesPanel.add new PlainMessageView
         message: '<span class="icon-hourglass"></span> Validation pending (this can take some time)...'
         raw: yes
@@ -28,6 +30,8 @@ module.exports = ->
             return unless oResponse.messages
 
             unless oResponse.messages.length
+                return oMessagesPanel.close() if atom.config.get "html-validation.hideOnNoErrors"
+
                 return oMessagesPanel.add new PlainMessageView
                     message: '<span class="icon-check"></span> No errors were found !'
                     raw: yes
