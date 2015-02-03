@@ -4,7 +4,7 @@ module.exports = HtmlValidation =
     config:
         validateOnSave:
             type: "boolean"
-            default: no
+            default: yes
             title: "Validate on save"
             description: "Make a validation each time you save an HTML file."
         validateOnChange:
