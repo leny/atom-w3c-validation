@@ -1,0 +1,16 @@
+{
+  "name": "html-validation",
+  "main": "./lib/html-validation",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "activationCommands": {
+    "atom-text-editor": "html-validation:validate"
+  },
+  "repository": "https://github.com/leny/atom-html-validation",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.170.0"
+  },
+  "dependencies": {
+  }
+}
