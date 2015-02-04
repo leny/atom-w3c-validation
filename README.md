@@ -32,15 +32,12 @@ The package validate on save by default (you can disable this behavior in the se
 
 #### CSS Profile
 
-`cssProfile`: Profile to use for CSS file validation (default: css3).  
-**For CSS files only**
+`cssProfile`: Profile to use for CSS file validation (default: css3). *For CSS files only*
 
 #### CSS Media
 
-`cssMedia`: Media to use for CSS file validation (default: all).  
-**For CSS files only**
+`cssMedia`: Media to use for CSS file validation (default: all). *For CSS files only*
 
 #### CSS Report severity
 
-`cssReportType`: CSS Report severity (default: normal).  
-**For CSS files only**
+`cssReportType`: CSS Report severity (default: normal). *For CSS files only*
