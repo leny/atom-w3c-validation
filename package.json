@@ -1,7 +1,7 @@
 {
   "name": "w3c-validation",
   "main": "./lib/main",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validate your HTML and CSS files using W3C validators.",
   "repository": "https://github.com/leny/atom-w3c-validation",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "atom": ">0.170.0"
   },
   "dependencies": {
-      "atom-message-panel": "^1.1.4",
-      "w3cvalidator": "^0.1.26"
+    "atom-message-panel": "^1.1.4",
+    "w3cvalidator": "^0.1.26"
   }
 }
