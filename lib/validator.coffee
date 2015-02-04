@@ -18,7 +18,7 @@ module.exports = ->
 
     oMessagesPanel.attach()
 
-    oMessagesPanel.toggle() if atom.config.get( "html-validation.useFoldModeAsDefault" ) and oMessagesPanel.summary.css( "display" ) is "none"
+    oMessagesPanel.toggle() if atom.config.get( "w3c-validation.useFoldModeAsDefault" ) and oMessagesPanel.summary.css( "display" ) is "none"
 
     oMessagesPanel.add new PlainMessageView
         message: '<span class="icon-hourglass"></span> Validation pending (this can take some time)...'
@@ -35,7 +35,7 @@ module.exports = ->
             return unless oResponse.messages
 
             unless oResponse.messages.length
-                return oMessagesPanel.close() if atom.config.get "html-validation.hideOnNoErrors"
+                return oMessagesPanel.close() if atom.config.get "w3c-validation.hideOnNoErrors"
 
                 return oMessagesPanel.add new PlainMessageView
                     message: '<span class="icon-check"></span> No errors were found !'
@@ -56,9 +56,9 @@ module.exports = ->
 
     if oEditor.getGrammar().name is "CSS"
         oOptions.validate = oEditor.getGrammar().name.toLowerCase()
-        oOptions.profile = atom.config.get "html-validation.cssProfile"
-        oOptions.medium = atom.config.get "html-validation.cssMedia"
-        oOptions.warnings = switch atom.config.get "html-validation.cssReportType"
+        oOptions.profile = atom.config.get "w3c-validation.cssProfile"
+        oOptions.medium = atom.config.get "w3c-validation.cssMedia"
+        oOptions.warnings = switch atom.config.get "w3c-validation.cssReportType"
             when "all" then 2
             when "most important" then 0
             when "no warnings" then "no"

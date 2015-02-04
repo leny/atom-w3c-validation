@@ -42,13 +42,13 @@ module.exports = HtmlValidation =
             description: "CSS Report severity (default: normal)."
 
     activate: ->
-        atom.commands.add "atom-text-editor", "html-validation:validate": ->
+        atom.commands.add "atom-text-editor", "w3c-validation:validate": ->
             validator() if atom.workspace.getActiveTextEditor().getGrammar().name in [ "HTML", "CSS" ]
 
-        atom.config.observe "html-validation.validateOnSave", ( bValue ) ->
+        atom.config.observe "w3c-validation.validateOnSave", ( bValue ) ->
             atom.workspace.eachEditor ( oEditor ) ->
                 oEditor.buffer[ if bValue then "on" else "off" ]( "saved", validator ) if oEditor.getGrammar().name in [ "HTML", "CSS" ]
 
-        atom.config.observe "html-validation.validateOnChange", ( bValue ) ->
+        atom.config.observe "w3c-validation.validateOnChange", ( bValue ) ->
             atom.workspace.eachEditor ( oEditor ) ->
                 oEditor.buffer[ if bValue then "on" else "off" ]( "contents-modified", validator ) if oEditor.getGrammar().name in [ "HTML", "CSS" ]

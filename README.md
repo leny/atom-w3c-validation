@@ -1,10 +1,10 @@
-# atom-html-validation
+# atom-w3c-validation
 
 > Validate your HTML and CSS file using [W3C markup validator](http://validator.w3.org/) or [W3C CSS validator](http://http://jigsaw.w3.org/css-validator/).
 
 * * *
 
-![A screenshot of the report](https://raw.githubusercontent.com/leny/atom-html-validation/master/caps/report.png)
+![A screenshot of the report](https://raw.githubusercontent.com/leny/atom-w3c-validation/master/caps/report.png)
 
 ## Usage
 
