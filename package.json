@@ -8,9 +8,8 @@
   "engines": {
     "atom": ">0.170.0"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "atom-message-panel": "^1.1.4",
-    "w3cvalidator": "^0.1.26"
+  "dependencies": {
+      "atom-message-panel": "^1.1.4",
+      "w3cvalidator": "^0.1.26"
   }
 }
