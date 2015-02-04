@@ -2,7 +2,7 @@
   "name": "html-validation",
   "main": "./lib/main",
   "version": "0.0.0",
-  "description": "Validate your html file using W3C validator.",
+  "description": "Validate your HTML and CSS files using W3C validators.",
   "repository": "https://github.com/leny/atom-html-validation",
   "license": "MIT",
   "engines": {
