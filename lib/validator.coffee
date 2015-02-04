@@ -2,15 +2,20 @@
 
 validator = require "w3cvalidator"
 
+sHTMLPanelTitle = '<span class="icon-microscope"></span> W3C Markup Validation Service Report'
+sCSSPanelTitle = '<span class="icon-microscope"></span> W3C CSS Validation Service Report'
+
 oMessagesPanel = new MessagePanelView
-    title: ( sPanelTitle = '<span class="icon-microscope"></span> W3C Markup Validation Service Report' )
     rawTitle: yes
     closeMethod: "destroy"
 
 module.exports = ->
-    return unless ( oEditor = atom.workspace.getActiveTextEditor() ) and oEditor.getGrammar().name is "HTML"
+    return unless ( oEditor = atom.workspace.getActiveTextEditor() )
 
     oMessagesPanel.clear()
+
+    oMessagesPanel.setTitle ( sPanelTitle = if oEditor.getGrammar().name is "CSS" then sCSSPanelTitle else sHTMLPanelTitle ), yes
+
     oMessagesPanel.attach()
 
     oMessagesPanel.toggle() if atom.config.get( "html-validation.useFoldModeAsDefault" ) and oMessagesPanel.summary.css( "display" ) is "none"
@@ -20,7 +25,7 @@ module.exports = ->
         raw: yes
         className: "text-info"
 
-    validator.validate
+    oOptions =
         input: oEditor.getText()
         output: "json"
         charset: oEditor.getEncoding()
@@ -48,3 +53,15 @@ module.exports = ->
                     className: "text-#{ oMessage.type }"
 
             atom.workspace.onDidChangeActivePaneItem -> oMessagesPanel.close()
+
+    if oEditor.getGrammar().name is "CSS"
+        oOptions.validate = oEditor.getGrammar().name.toLowerCase()
+        oOptions.profile = atom.config.get "html-validation.cssProfile"
+        oOptions.medium = atom.config.get "html-validation.cssMedia"
+        oOptions.warnings = switch atom.config.get "html-validation.cssReportType"
+            when "all" then 2
+            when "most important" then 0
+            when "no warnings" then "no"
+            else 1
+
+    validator.validate oOptions
