@@ -46,9 +46,9 @@ module.exports = HtmlValidation =
             validator() if atom.workspace.getActiveTextEditor().getGrammar().name in [ "HTML", "CSS" ]
 
         atom.config.observe "w3c-validation.validateOnSave", ( bValue ) ->
-            atom.workspace.eachEditor ( oEditor ) ->
+            atom.workspace.observeTextEditors ( oEditor ) ->
                 oEditor.buffer[ if bValue then "on" else "off" ]( "saved", validator ) if oEditor.getGrammar().name in [ "HTML", "CSS" ]
 
         atom.config.observe "w3c-validation.validateOnChange", ( bValue ) ->
-            atom.workspace.eachEditor ( oEditor ) ->
+            atom.workspace.observeTextEditors ( oEditor ) ->
                 oEditor.buffer[ if bValue then "on" else "off" ]( "contents-modified", validator ) if oEditor.getGrammar().name in [ "HTML", "CSS" ]
