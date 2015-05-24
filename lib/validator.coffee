@@ -49,7 +49,7 @@ module.exports = ->
                     message: oMessage.message
                     line: oMessage.lastLine
                     character: oMessage.lastColumn
-                    preview: oEditor.lineTextForBufferRow( oMessage.lastLine - 1 ).trim()
+                    preview: ( oEditor.lineTextForBufferRow( oMessage.lastLine - 1 ) ? "" ).trim()
                     className: "text-#{ oMessage.type }"
 
             atom.workspace.onDidChangeActivePaneItem -> oMessagesPanel.close()

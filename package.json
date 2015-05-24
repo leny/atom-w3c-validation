@@ -6,7 +6,7 @@
   "repository": "https://github.com/leny/atom-w3c-validation",
   "license": "MIT",
   "engines": {
-    "atom": ">=0.177.0"
+    "atom": ">=0.199.0"
   },
   "dependencies": {
     "atom-message-panel": "^1.2.4",
