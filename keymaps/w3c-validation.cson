@@ -1,5 +1,10 @@
-'.platform-linux atom-text-editor, .platform-win32 atom-text-editor':
-  'ctrl-alt-g': 'html-validation:validate'
+# With the success of Atom, it's really difficult to choose keybindings that
+# will not enter in conflict whit anyone else's packages, so I let this file
+# empty to set your own keybindings.
+# For you informations, here's an exemple of my keybindings for w3c-validation
 
-'.platform-darwin atom-text-editor':
-  'cmd-alt-g': 'html-validation:validate'
+# '.platform-linux atom-text-editor:not([mini]), .platform-win32 atom-text-editor:not([mini])':
+#   'ctrl-alt-g': 'w3c-validation:validate'
+#
+# '.platform-darwin atom-text-editor:not([mini])':
+#   'cmd-alt-g': 'w3c-validation:validate'
