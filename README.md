@@ -1,6 +1,6 @@
 # atom-w3c-validation
 
-> Validate your HTML and CSS file using [W3C markup validator](http://validator.w3.org/) or [W3C CSS validator](http://http://jigsaw.w3.org/css-validator/).
+> Validate your HTML and CSS file using [W3C markup validator](http://validator.w3.org/) or [W3C CSS validator](http://jigsaw.w3.org/css-validator/).
 
 * * *
 
