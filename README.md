@@ -8,7 +8,7 @@
 
 ## Usage
 
-The package validate on save by default (you can disable this behavior in the settings). You can also use the comma,d `w3c-validation:validate`.
+The package validate on save by default (you can disable this behavior in the settings). You can also use the command `w3c-validation:validate`.
 
 **Note:** the validation process is made by requesting the code to the online [W3C markup validator](http://validator.w3.org/) or [W3C CSS validator](http://http://jigsaw.w3.org/css-validator/). This can take some time.
 
